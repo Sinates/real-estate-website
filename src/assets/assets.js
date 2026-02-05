@@ -1,5 +1,9 @@
  import logo from "./logo.png";
-import img from "./img.jpg";
-import nav from "./nav.jpg";
+import about from "./about.png";
+import icon from "./icon.png";
 
-export const assets = { logo, img, nav };
+export const assets = {
+  logo,
+  about,
+  icon,
+};
