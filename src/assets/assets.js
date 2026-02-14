@@ -10,6 +10,10 @@ import project3 from "./project_img_3.png";
 import project4 from "./project_img_4.png";
 import project5 from "./project_img_5.png";
 import project6 from "./project_img_6.png";
+import profile_img_1 from "./profile_img_1.png";
+import profile_img_2 from "./profile_img_2.png";
+import profile_img_3 from "./profile_img_3.png";
+
  
  
 
@@ -24,7 +28,10 @@ export const assets = {
   project3,
   project4,
   project5,
-  project6
+  project6,
+  profile_img_1,
+  profile_img_2,
+  profile_img_3,
 };
 
 export const projectsData = [
@@ -65,3 +72,31 @@ export const projectsData = [
     image: project6,
   },
 ];
+
+export const testimonialsData = [
+  {
+    name: "Donald Jackman",
+    title: "Marketing Manager",
+    image: profile_img_1,
+    alt: "Portrait of Donald Jackman",
+    rating: 5,
+    text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
+  },
+  {
+    name: "Richard Nelson",
+    title: "UI/UX Designer",
+    image: profile_img_2,
+    alt: "Portrait of Richard Nelson",
+    rating: 4,
+    text: "The team was professional, responsive, and truly cared about helping me find the right home. I couldn’t be happier with the experience."
+  },
+  {
+    name: "Sarah Williams",
+    title: "Software Developer",
+    image: profile_img_3,
+    alt: "Portrait of Sarah Williams",
+    rating: 5,
+    text: "Exceptional service from start to finish. They made the entire process smooth and stress-free."
+  }
+];
+

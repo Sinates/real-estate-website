@@ -25,7 +25,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 md:px-20 lg:px-32 py-16">
+    <div className="container mx-auto px-6 md:px-20 lg:px-32 py-16" id='Projects'>
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
         Projects <span className="font-light">Completed</span>
       </h1>
@@ -71,7 +71,7 @@ const Projects = () => {
                 alt={project.title}
                 className="w-full h-56 object-cover"
               />
-
+             <div> </div>
               <div className="p-4">
                 <h3 className="text-lg font-semibold">{project.title}</h3>
                 <p className="text-gray-500">{project.location}</p>
