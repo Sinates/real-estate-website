@@ -15,7 +15,10 @@ const Testimonails = () => {
       <p className='text-gray-500 mb-4 text-sm'>{testimonial.title}</p>
       <div className='flex justify-center gap-1 text-red-500 mb-4'> 
         {Array.from({ length: testimonial.rating }).map((item, i) => (
-           <img key={i} src={assets.star}/>
+           <img key={i} src={assets.star} className="w-20 h-16"
+
+
+/>
         ))}
         
         </div> 

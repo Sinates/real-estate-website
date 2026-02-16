@@ -4,16 +4,21 @@ import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
 import Testimonails from './components/Testimonails.jsx'
 import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
+ import { ToastContainer} from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
    return (
      <div className='w-full  overflow-hidden'>
-  
+  <ToastContainer />
        <Header/>   
        <About/>  
             <Projects/>
             <Testimonails/>
             <Contact/>
+            <Footer/>
        </div>
    
    )

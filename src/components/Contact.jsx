@@ -1,13 +1,41 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
 const Contact = () => {
+
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "6d739f0b-70a6-413b-9ed7-c1707d77bc2d");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("");
+       toast.success("Form submitted successfully!");
+      event.target.reset(); 
+    } else {
+      console.log("Error", data);
+     toast.error("There was an error submitting the form.");
+      setResult("");
+    }
+  };
   return (
     <div className='text-center p-6 py-20 lg:px-32 w-full overflow-hidden' id='Contact'>
       <div className='container mx-auto py-10 lg:px-32 w-full overflow-hidden' >
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>Contact <span className='underline underline-offset-4 decoration-1 under font-light'>With Us</span></h1> 
       <p className='text-center text-gray-500 mb-12 max-w-80 mx-auto'>Ready to make a move? Let's build your future together </p>
         </div>
-        <form className='max-w-2xl mx-auto text-gray-600 pt-8' >
+        <form onSubmit={onSubmit} className='max-w-2xl mx-auto text-gray-600 pt-8' >
 <div className='flex flex-wrap'>
 
     <div className='w-full md:w-1/2 text-left'>
@@ -23,7 +51,7 @@ const Contact = () => {
     Message
     <textarea className='w-full border border-gray-300 rounded py-4 px-4 mt-2 h-48 resize-none' name="Message" required placeholder='Your Message' rows="5"></textarea>
 </div>
-<button className='bg-blue-600 text-white py-2 px 12 mb-10 rounded'>Submitt</button>
+<button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded'>{result ? result:"Send Message"}</button>
         </form>
     </div>
   )
